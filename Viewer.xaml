@@ -1,15 +1,10 @@
 ﻿<Window x:Class="MonocularPhotoViewer.Viewer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Viewer" Height="300" Width="300">
+        Title="Viewer" Height="700" Width="700">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-
-        <Canvas x:Name="LeftCanvas"  Focusable="True" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"   Grid.Column="0" Grid.Row="0" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
-            <Image x:Name='leftImage' Canvas.Left="10" Canvas.Top="10"  Grid.Row="0" Grid.Column="0" ></Image>
-        </Canvas>
+        <Canvas x:Name="LeftCanvas"  Focusable="True" HorizontalAlignment="Center" Margin="10,10,10,10" VerticalAlignment="Center"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+        <Image x:Name='imageRegion' Source="FirstImage.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     </Grid>
 </Window>
