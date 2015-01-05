@@ -19,3 +19,18 @@ C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\Monocu
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.csproj.GenerateResource.Cache
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.exe
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.pdb
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\bin\Debug\MonocularPhotoViewer.exe.config
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.exe
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.pdb
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\bin\Debug\MonocularPhotoViewer.exe
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\bin\Debug\MonocularPhotoViewer.pdb
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.csprojResolveAssemblyReference.cache
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MainWindow.baml
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\Viewer.baml
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MainWindow.g.cs
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\Viewer.g.cs
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\App.g.cs
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer_MarkupCompile.cache
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.g.resources
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.Properties.Resources.resources
+C:\Users\sandrabi\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.csproj.GenerateResource.Cache

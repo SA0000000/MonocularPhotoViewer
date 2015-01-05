@@ -176,7 +176,7 @@ namespace MonocularPhotoViewer
         {
             //create directory if it doesnot exist and then save files in that directory
             String dir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            dir = System.IO.Path.Combine(dir, "VC_shares");
+            dir = System.IO.Path.Combine(dir, "VC_shares_Monocular");
             if ((!System.IO.Directory.Exists(dir)))
             {
                 System.IO.Directory.CreateDirectory(dir);

@@ -26,6 +26,8 @@ namespace MonocularPhotoViewer
         ScaleTransform xform;
         GamePadState lastGamePadState;
 
+        //bool focus = false;
+
         
         //enum to indicate direction
         enum Direction : int
@@ -42,12 +44,11 @@ namespace MonocularPhotoViewer
 
         //For zooming
         enum Zoom : int { zoomIn = 1, zoomOut = -1 };
-        float zoomValue = 0.05f;
+        float zoomValue = 0.025f;
         int x_zoom = 0, y_zoom = 0;
 
         //create variables that will store where the user set the first image and 
         //then will be used to display the other images at the same spatial window coordinates and state
-        bool setImagePosition = false;
         double leftPos, topPos;
         double[] img_zoomVal = new double[2];
 
@@ -59,7 +60,7 @@ namespace MonocularPhotoViewer
             InitializeComponent();
             LeftCanvas.Visibility = Visibility.Visible;
 
-            //set transforms for left canvas
+            //set transforms for canvas
             xformGroup = new TransformGroup();
             xform = new ScaleTransform();
             xformGroup.Children.Add(xform);
@@ -100,8 +101,8 @@ namespace MonocularPhotoViewer
             //based on button presses take specific actions
             if (currentState.IsConnected && lastGamePadState != currentState)
             {
-                #region Dpad Direction
-                //if DPad has been pressed...check which direction and move the image accordingly
+                #region Dpad Zooming
+                //if DPad has been pressed...check which direction to zoomin or out
                 if (currentState.DPad.Up == ButtonState.Pressed)
                 {
                     y_zoom = (int)Zoom.zoomOut;
@@ -127,7 +128,7 @@ namespace MonocularPhotoViewer
                 else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickDown) && currentState.IsButtonDown(Buttons.LeftThumbstickDown))
                     move = (int)Direction.down;
                 else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickRight))
-                    move = (int)Direction.up;
+                    move = (int)Direction.right;
                 else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
                     move = (int)Direction.left;
                 else
@@ -246,6 +247,16 @@ namespace MonocularPhotoViewer
                 if (MessageBox.Show("Congratulations!! You have successfully finished the study!! :) :)", "Viewer", MessageBoxButton.OK) == MessageBoxResult.OK)
                     this.Close();
             }
+        }
+
+        private void Window_LostFocus(object sender, RoutedEventArgs e)
+        {
+           // focus = false;
+        }
+
+        private void Window_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //focus = true;
         }
     }
 }
