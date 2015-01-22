@@ -7,7 +7,6 @@ C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\Monocu
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\bin\Debug\Microsoft.Xna.Framework.xml
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\bin\Debug\Microsoft.Xna.Framework.Game.xml
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
-C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MonocularPhotoViewer.csprojResolveAssemblyReference.cache
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MainWindow.baml
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\Viewer.baml
 C:\Users\Veritatis Cupitor\Google Drive\Research\Dev\MonocularPhotoViewer\MonocularPhotoViewer\obj\Debug\MainWindow.g.cs

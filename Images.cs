@@ -42,10 +42,12 @@ namespace MonocularPhotoViewer
         int imgNum;
         private int TrainingImageCount;     //number of Training images
         private int TaskOneImageCount;      //number of task1 images
+        private int TaskTwoImageCount;      //number of task2 images
+        private int TaskThreeImageCount;      //number of task3 images
         private String ImageCategory;       //whether training image or task1 image
 
         //initialize components
-        public Images(String s_num, String[] filelist, int training, int task1)
+        public Images(String s_num, String[] filelist, int training, int task1,int task2, int task3)
         {
             //set the study number
             studyNumber = s_num;
@@ -53,8 +55,10 @@ namespace MonocularPhotoViewer
             //set number of images per task
             TrainingImageCount = training;
             TaskOneImageCount = task1;
-            imgNum = training + task1;
-            MAX = imgNum + 2;    //to include the other task separation images
+            TaskTwoImageCount = task2;
+            TaskThreeImageCount = task3;
+            imgNum = training + task1 + task2 + task3;
+            MAX = imgNum + 4;    //to include the other task separation images
 
             //initialize ImageInfo list
             myImageInfo = new ImageInfo[MAX];
@@ -73,13 +77,18 @@ namespace MonocularPhotoViewer
                 else if (i == TrainingImageCount + 1)
                 {
                     ImageCategory = "Task 1";
-                    myImageInfo[i] = new ImageInfo(@"EndofTraining.png");
+                    myImageInfo[i] = new ImageInfo(@"Task1.png");
                 }
-                //else if (i == TrainingImageCount + TaskOneImageCount+2) //+2 to account for the images that are added to indicate start and end of tasks
-                //{
-                //    ImageCategory = "End";
-                //    myImageInfo[i] = new ImageInfo(@"EndofTask1.png");
-                //}
+                else if (i == TrainingImageCount + TaskOneImageCount + 2) //+2 to account for the images that are added to indicate start and end of tasks
+                {
+                    ImageCategory = "Task 2";
+                    myImageInfo[i] = new ImageInfo(@"Task2.png");
+                }
+                else if (i == TrainingImageCount + TaskOneImageCount + TaskTwoImageCount + 3) //+2 to account for the images that are added to indicate start and end of tasks
+                {
+                    ImageCategory = "Task 3";
+                    myImageInfo[i] = new ImageInfo(@"Task3.png");
+                }
                 else
                     myImageInfo[i] = new ImageInfo(filelist[k++]);
 
@@ -184,7 +193,7 @@ namespace MonocularPhotoViewer
 
             StreamWriter sw = new StreamWriter(dir + "\\VC_Study_" + studyNumber + ".txt");
             String entry;
-            sw.WriteLine("Image filename\t\t\t\t\t\t\tImage Category\tStart Time\t\tEnd Time\t\tTotal Time\n");
+            sw.WriteLine("Image filename\tImage Category\tStart Time\tEnd Time\tTotal Time\n");
 
             //write all the entries for this study set
             for (int i = 0; i < MAX; i++)

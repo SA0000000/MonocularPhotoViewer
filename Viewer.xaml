@@ -7,8 +7,8 @@
             <ColumnDefinition Width="631*"/>
             <ColumnDefinition Width="62*"/>
         </Grid.ColumnDefinitions>
-        <Canvas x:Name="LeftCanvas"  Focusable="True" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
-            <Image x:Name='imageRegion'  Canvas.Left="10" Canvas.Top="10" Source="FirstImage.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Canvas x:Name="LeftCanvas"  Focusable="True" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" ScrollViewer.HorizontalScrollBarVisibility="Auto" RenderTransformOrigin="0.5,0.5">
+            <Image x:Name='imageRegion'  Canvas.Left="10" Canvas.Top="10" Source="FirstImage.png" HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         </Canvas>
 
     </Grid>

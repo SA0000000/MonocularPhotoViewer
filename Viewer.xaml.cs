@@ -55,7 +55,7 @@ namespace MonocularPhotoViewer
         //create an instance of Class Images to store and deal with all images
         Images images;
 
-        public Viewer(String studynum, String[] filelist, int training, int task1)
+        public Viewer(String studynum, String[] filelist, int training, int task1,int task2,int task3)
         {
             InitializeComponent();
             LeftCanvas.Visibility = Visibility.Visible;
@@ -72,7 +72,7 @@ namespace MonocularPhotoViewer
             img_zoomVal[1] = xform.ScaleY + 0.15f * (-1);
 
             //init Images class object
-            images = new Images(studynum, filelist, training, task1);
+            images = new Images(studynum, filelist, training, task1, task2, task3);
 
             //set first image on the canvas
             imageRegion.Source = new BitmapImage(new Uri(@"FirstImage.png", UriKind.RelativeOrAbsolute));
@@ -101,38 +101,43 @@ namespace MonocularPhotoViewer
             //based on button presses take specific actions
             if (currentState.IsConnected && lastGamePadState != currentState)
             {
-                #region Dpad Zooming
-                //if DPad has been pressed...check which direction to zoomin or out
+                #region Dpad Move Direction
+                //if DPad has been pressed...check which direction and move the image accordingly
                 if (currentState.DPad.Up == ButtonState.Pressed)
                 {
-                    y_zoom = (int)Zoom.zoomOut;
+                    move = (int)Direction.up;
                 }
                 else if (currentState.DPad.Down == ButtonState.Pressed)
                 {
-                    y_zoom = (int)Zoom.zoomIn;
+                    move = (int)Direction.down;
                 }
                 else if (currentState.DPad.Left == ButtonState.Pressed)
                 {
-                    x_zoom = (int)Zoom.zoomOut;
+                    move = (int)Direction.left;
                 }
                 else if (currentState.DPad.Right == ButtonState.Pressed)
                 {
-                    x_zoom = (int)Zoom.zoomIn;
-                }
-                #endregion
-
-                #region LeftThumbstick Direction
-                //ifLeftThumbstick has been moved move image accordingly
-                if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickUp) && currentState.IsButtonDown(Buttons.LeftThumbstickUp))
-                    move = (int)Direction.up;
-                else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickDown) && currentState.IsButtonDown(Buttons.LeftThumbstickDown))
-                    move = (int)Direction.down;
-                else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickRight))
                     move = (int)Direction.right;
-                else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
-                    move = (int)Direction.left;
+                }
                 else
                     move = 0;
+                #endregion
+
+                #region LeftThumbstick Zooming
+                //ifLeftThumbstick has been moved up or down zoom in and out respectively
+                if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickUp) && currentState.IsButtonDown(Buttons.LeftThumbstickUp))
+                    y_zoom = (int)Zoom.zoomOut;
+                else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickDown) && currentState.IsButtonDown(Buttons.LeftThumbstickDown))
+                    y_zoom = (int)Zoom.zoomIn;
+                else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickRight))
+                    x_zoom = (int)Zoom.zoomIn;
+                else if (lastGamePadState.IsButtonUp(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
+                    x_zoom = (int)Zoom.zoomOut;
+                else
+                {
+                    x_zoom = 0;
+                    y_zoom = 0;
+                }
                 #endregion
 
                 //if Button A has been pressed move to the next image and save state accordingly
